@@ -36,7 +36,7 @@ To get a development environment running, follow these steps:
 1. Clone the repo:
 
 ```bash
-git clone https://github.com/your_username_/Project-Name.git
+git clone https://github.com/cmaskaler/Product-Recommendation-Algorithms-Benchmark.git
 ```
 
 2. Install required packages:

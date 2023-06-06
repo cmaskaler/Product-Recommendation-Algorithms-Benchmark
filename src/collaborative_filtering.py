@@ -102,7 +102,8 @@ def run_knn_for_various_k(ratings_df, k_values):
         
         # Initialize the KNNBaseline algorithm with the current k
         baseline_options = {'method': 'als', 'n_epochs': 5, 'reg_u': 12, 'reg_i': 5}
-        sim_options = {'name': 'msd', 'user_based': True}
+        # For the several k values we tested with faster item-based CF.
+        sim_options = {'name': 'msd', 'user_based': False}
         algorithm = KNNBaseline(k=k, sim_options=sim_options, bsl_options=baseline_options)
 
         # Perform cross validation and get measures like RMSE
@@ -136,6 +137,8 @@ def run_knn_for_various_k(ratings_df, k_values):
     plt.show()
 
 def init(ratings):
+    # As in the thesis document, the default benchmark on CF memory-based is user-based so we set user_based=True
+    # Change it for faster and better item-based CF, we tested on the experimentation section
     similarity_options = {'name': 'msd', 'user_based': True, 'verbose': False}
     baseline_options = {'method': 'als', 'n_epochs': 5, 'reg_u': 12, 'reg_i': 5, 'verbose': False}
     

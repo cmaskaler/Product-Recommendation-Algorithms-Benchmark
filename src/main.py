@@ -23,7 +23,7 @@ warnings.filterwarnings('ignore')
 pd.set_option('display.float_format', lambda x: '%.3f' % x)
 
 # Load the dataset into a Pandas dataframe called ratings and skip any lines that return an error
-ratings = pd.read_csv('Electronics.csv',
+ratings = pd.read_csv('data\Electronics.csv',
                       names=['userId', 'productId', 'rating', 'timestamp'],
                       error_bad_lines=False,
                       warn_bad_lines=False)
@@ -83,7 +83,7 @@ prodID = ratings.groupby('productId')['rating'].count()
 
 # Find products that have 100 or more ratings
 # Change to 150 or 200 if you encounter memory issues
-top_prod = prodID[prodID >= 300].index
+top_prod = prodID[prodID >= 100].index
 
 # Keep data only for products that have 50 or more ratings
 ratings = ratings[ratings['productId'].isin(top_prod)]
@@ -106,15 +106,7 @@ print('Total ratings possible for the dataset :', possible_num_of_ratings)
 density = len(ratings) / possible_num_of_ratings * 100
 print('Density of the dataset                 : {:4.2f}%'.format(density))
 
-# Divide the dataset in 70:30 ratio
-trainset, testset = model_selection.train_test_split(ratings, test_size=0.3, random_state=5)
-trainset.head()
-testset.head()
-
-print('Shape of the training set  :', trainset.shape)
-print('Shape of the test set      :', testset.shape)
-
 # Call the popularity function from the popularity_filtering module
-#popularity_filtering.popularity(ratings)
+popularity_filtering.popularity(ratings)
 collaborative_filtering.init(ratings)
-#content_based_filtering.initiate_recommendation()
+content_based_filtering.initiate_recommendation()

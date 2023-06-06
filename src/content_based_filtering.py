@@ -212,12 +212,14 @@ def generate_recommendations(df, reduced_matrix, similarity_matrix, chosen_produ
 
     html += '</body></html>'
     print(f"Time taken: {round(time.time() - start_time, 2)} seconds")
-    write_html(html, html_file)
+    
+    html_file_path = 'results/similar_products/' + html_file  # prepend the directory to your file
+    write_html(html, html_file_path)  # pass the full path to the write_html function
 
 
 # Main function to call all other functions
 def initiate_recommendation():
-    product_dataset_path = 'Electronics_meta.csv'
+    product_dataset_path = 'data\Electronics_meta.csv'
     df = load_dataset(product_dataset_path)
     df = create_combined_feature(df)
 
