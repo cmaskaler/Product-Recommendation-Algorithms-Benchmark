@@ -42,7 +42,6 @@ git clone https://github.com/cmaskaler/Product-Recommendation-Algorithms-Benchma
 2. Install required packages:
 Navigate to the directory where you have cloned the repository and then install the required packages using the following command:
 ```bash
-Copy code
 pip install -r requirements.txt
 ```
 This will install all the necessary libraries and dependencies required for this project as mentioned in the requirements.txt file.
