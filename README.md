@@ -42,7 +42,7 @@ git clone https://github.com/cmaskaler/Product-Recommendation-Algorithms-Benchma
 2. Install required packages:
 Navigate to the directory where you have cloned the repository and then install the required packages using the following command:
 ```bash
-pip install -r requirements.txt
+pip install -r src\requirements.txt
 ```
 This will install all the necessary libraries and dependencies required for this project as mentioned in the requirements.txt file.
 
@@ -50,7 +50,7 @@ This will install all the necessary libraries and dependencies required for this
 
 Once you have successfully installed all the necessary libraries and dependencies, you can run the main script by executing the following command in your terminal:
 ```bash
-python main.py
+python src\main.py
 ```
 This command will execute the main.py script which loads the dataset, performs some preliminary data analysis and then calls the different recommendation methods for generating product recommendations.
 
