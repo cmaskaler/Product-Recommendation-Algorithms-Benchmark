@@ -1,4 +1,4 @@
-# Electronic Products Recommender System
+# Product Recommendation Algorithms Benchmark
 
 ## Table of Contents
 
@@ -77,3 +77,12 @@ This script contains the functionality for the Content-Based Filtering recommend
 
 Each script can be run independently, but for the complete recommendation system, the `main.py` should be executed.
 
+
+```markdown
+Please make sure to be aware of the following configuration which could impact the system's performance depending on your machine's capabilities:
+```
+
+```python
+# Find products that have 100 or more ratings
+# Change to 150 or 200 if you encounter memory issues
+top_prod = prodID[prodID >= 100].index
