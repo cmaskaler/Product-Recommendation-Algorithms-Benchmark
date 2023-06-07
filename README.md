@@ -5,8 +5,8 @@
 1. [Introduction](#introduction)
 2. [Getting Started](#getting-started)
 3. [Usage](#usage)
-4. [Scripts](#scripts)
-5. [Contributing](#contributing)
+4. [Scripts Overview](#scripts-overview)
+5. [Warning](#warning)
 
 ## Introduction
 
@@ -77,9 +77,9 @@ This script contains the functionality for the Content-Based Filtering recommend
 Each script can be run independently, but for the complete recommendation system, the `main.py` should be executed.
 
 
-```markdown
-Please make sure to be aware of the following configuration which could impact the system's performance depending on your machine's capabilities:
-```
+## Warning
+
+Experimenting with the following variable will affect the whole benchmark and its results. Lowering can cause memory issues, according to your machine's capabilities.
 
 ```python
 # Find products that have 100 or more ratings
